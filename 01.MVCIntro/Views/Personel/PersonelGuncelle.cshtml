@@ -1,0 +1,12 @@
+﻿@model _01.MVCIntro.Models.Personel
+
+<form asp-action="Guncelle" method="post">
+    <input type="hidden" asp-for="Id" />
+    <div class="form-group">
+        <label>Ad:</label>
+        <input type="text" asp-for="Ad" required />
+        <label>Soyad:</label>
+        <input type="text" asp-for="Soyad" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Guncelle</button>
+</form>

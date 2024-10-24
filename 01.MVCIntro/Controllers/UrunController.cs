@@ -22,6 +22,28 @@ namespace _01.MVCIntro.Controllers
             return View(list);
         }
 
+        [HttpGet]
+
+        public IActionResult Ekle()
+
+        {
+
+            return View(list);
+
+        }
+        [HttpPost]
+
+        public IActionResult Ekle(Urun urun)
+
+        {
+
+            urun.Id = list.Count + 1; //ürün eklendiğinde IDsi artar
+
+            list.Add(urun);
+
+            return RedirectToAction("List");
+
+        }
 
     }
 }

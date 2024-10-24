@@ -1,0 +1,29 @@
+﻿@model List<Personel>
+
+<a class="btn btn-info" asp-action="Ekle"> Yeni Personel Ekle</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Ad</th>
+            <th>Soyad</th>
+            <th>Sil</th>
+            <th>Guncelle</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var personel in Model)
+        {
+            <tr>
+                <td>@personel.Id</td>
+                <td>@personel.Ad</td>
+                <td>@personel.Soyad</td>
+                <td><a class="btn btn-warning" asp-action="Sil" asp-route-id="@personel.Id">Sil</a></td>
+                <td><a class="btn btn-secondary" asp-action="Guncelle" asp-route-id="@personel.Id">Guncelle</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="/Personel/PersonelEkle" target="_blank">Personeller</a>
